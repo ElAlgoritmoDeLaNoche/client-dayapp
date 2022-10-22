@@ -1,7 +1,7 @@
 import axios from "axios"
 
-const api = axios.create({ baseURL: "http://localhost:8000" })
-// const api = axios.create({ baseURL: "https://instaverse-back.vercel.app" })
+// const api = axios.create({ baseURL: "http://localhost:8000" })
+const api = axios.create({ baseURL: "https://server-dayapp.vercel.app" })
 
 api.interceptors.request.use((req) => {
 
