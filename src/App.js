@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+import Signup from './Components/Authentication/Signup/Signup'
+import Login from './Components/Authentication/Login/Login'
+import Home from './Components/Home/Home'
+import AddNote from './Components/AddNote/AddNote'
+import DetailNote from './Components/Home/DetailNote/DetailNote'
+import Olas from './Themes/Olas'
+
+import Nav from './Components/Nav/Nav'
+import { useDarkMode } from './Themes/useDarkMode'
+import { GlobalStyles, lightTheme, darkTheme } from './Themes/globalStyles'
+import { ThemeProvider } from 'styled-components'
+
+import './css/App.css'
+
+const App = () => {
+
+  const [theme, toggleTheme] = useDarkMode()
+  const themeMode = theme === 'light' ? lightTheme : darkTheme
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <ThemeProvider theme={themeMode}>
+        <GlobalStyles />
+        <Nav theme={theme} toggleTheme={toggleTheme} />
+        <Routes>
+          <Route path='/' element={<Signup />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/add-note' element={<AddNote />} />
+          <Route path='/detail-note/:id/:title/:description/:tags/:color/:postDate' element={<DetailNote />} />
+        </Routes>
+        <Olas />
+      </ThemeProvider>
+    </BrowserRouter >
+  )
 }
 
-export default App;
+export default App

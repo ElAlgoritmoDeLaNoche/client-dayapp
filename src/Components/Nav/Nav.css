@@ -1,0 +1,31 @@
+.container-nav {
+  padding: 15px 70px 15px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid grey;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.change-color-button {
+  width: 24px;
+  cursor: pointer;
+  margin: 0 0 0 0;
+  outline: none;
+}
+
+.button button {
+  margin-left: 10px;
+  display: inline-block;
+  border-radius: 60px;
+  /* box-shadow: 0 0 2px #fff; */
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
