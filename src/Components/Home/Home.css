@@ -67,10 +67,10 @@
   width: 80%;
   height: 75vh;
   padding: 30px;
-  display: grid;
+  /* display: grid; */
   /* grid-template-columns: 31% 31% 31%; */
-  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
-  gap: 40px;
+  /* grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); */
+  /* gap: 40px; */
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -89,6 +89,7 @@
 
 .grid-container {
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .grid-item {
@@ -124,7 +125,7 @@
 .description {
   margin: 0;
   padding: 0px 20px 0px 20px;
-  font-size: 10px;
+  font-size: 12px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
